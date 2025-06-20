@@ -18,17 +18,17 @@ document.addEventListener('DOMContentLoaded', function () {
     li.textContent = taskText;
 
     // Create a "Remove" button
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Remove';
-    removeBtn.className = 'remove-btn';
+    const removeButton = document.createElement('button');
+    removeButton.textContent = "Remove";
+    removeButton.classList.add('remove-btn'); // ✅ FIXED: uses classList.add
 
     // When clicked, remove the task
-    removeBtn.onclick = function () {
+    removeButton.onclick = function () {  // ✅ FIXED: typo 'removeBtn' to 'removeButton'
       taskList.removeChild(li);
     };
 
     // Append the button to the task, and task to the list
-    li.appendChild(removeBtn);
+    li.appendChild(removeButton); // ✅ FIXED: also renamed here
     taskList.appendChild(li);
 
     // Clear the input
